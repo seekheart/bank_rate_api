@@ -133,3 +133,4 @@ dmypy.json
 
 # sensitive data
 request.json
+data.json
