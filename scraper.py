@@ -6,7 +6,17 @@ from engines import BankRateEngine
 import sys
 
 def transform_data(raw_data: dict) -> list:
-    return raw_data['data']['cd_rates']
+    raw_data = raw_data['data']['cd_rates']
+
+    tmp_dict = {}
+    data = []
+    for item in raw_data:
+        tmp_dict = {
+            'institution': item['institution']['name'],
+            'apy': item['apy']
+        }
+        data.append(tmp_dict)
+    return data
 
 
 def main():
@@ -30,6 +40,7 @@ def main():
     bank_rate_engine = BankRateEngine()
     logger.info('Exporting data to database')
     bank_rate_engine.drop_and_replace_data(data)
+    logger.debug(bank_rate_engine.find_all())
 
 if __name__ == '__main__':
     main()
