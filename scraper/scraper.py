@@ -8,14 +8,25 @@ import sys
 def transform_data(raw_data: dict) -> list:
     raw_data = raw_data['data']['cd_rates']
 
-    tmp_dict = {}
     data = []
+    seen_data = set()
     for item in raw_data:
         tmp_dict = {
-            'institution': item['institution']['name'],
+            'institution': item['institution']['name'].strip(),
             'apy': item['apy']
         }
+
+        institution = tmp_dict['institution']
+        apy = tmp_dict['apy']
+
+        if (institution, apy) in seen_data:
+            logger.info(f'already have data for institution = {institution} apy = {apy} skipping')
+            continue
+        else:
+            seen_data.add((institution, apy))
+
         data.append(tmp_dict)
+
     return data
 
 
