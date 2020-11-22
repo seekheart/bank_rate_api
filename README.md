@@ -1,1 +1,3 @@
-# bank_rate_scraper
+# Bank Rate Api
+
+A Rest Api for bank rates
