@@ -1,3 +1,2 @@
-from .config import *
-
-__all__ = ['TARGET_URL', 'OUTPUT_FILE_NAME', 'REQ_BODY']
+from .scraper_config import *
+from .mongo_config import *

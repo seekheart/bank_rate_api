@@ -1,5 +1,4 @@
 from .mongo_engine import MongoEngine
-import pymongo
 from loguru import logger
 from uuid import uuid4
 

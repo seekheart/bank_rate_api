@@ -1,7 +1,7 @@
 import json
 from loguru import logger
 import requests
-from config import *
+from config import REQ_BODY, TARGET_URL
 from engines import BankRateEngine
 import sys
 

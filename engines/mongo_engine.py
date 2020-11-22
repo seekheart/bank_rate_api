@@ -1,5 +1,5 @@
 import pymongo
-import config
+from config import MONGO_HOST, MONGO_PORT, MONGO_DB_NAME
 from loguru import logger
 
 
@@ -10,9 +10,9 @@ class MongoEngine:
             collection: name of collection to operate on.
         """
 
-        self._host = config.MONGO_HOST
-        self._port = config.MONGO_PORT
-        self._db_name = config.MONGO_DB_NAME
+        self._host = MONGO_HOST
+        self._port = MONGO_PORT
+        self._db_name = MONGO_DB_NAME
         self._collection = collection
 
         try:
