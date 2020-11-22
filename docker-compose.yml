@@ -1,0 +1,9 @@
+version: "3"
+services:
+  mongodb:
+    image: mongo
+    volumes:
+      - ${pwd}/data:/data/db
+    ports:
+      - "2000:27017"
+    command: mongod

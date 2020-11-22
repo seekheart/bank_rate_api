@@ -1,5 +1,12 @@
 import os
 
+# Mongo Settings
+MONGO_HOST = os.environ['MONGO_HOST']
+MONGO_PORT = int(os.environ['MONGO_PORT'])
+MONGO_DB_NAME = os.environ['MONGO_DB']
+
+
+# Scraper Config
 TARGET_URL = os.environ['BANK_URL']
 REQ_BODY = os.environ['REQ_BODY']
 try:
